@@ -27,7 +27,9 @@ FORMS    += \
 RESOURCES += \
     occqt.qrc
 
-CASROOT = D:/OpenCASCADE7.2.0/opencascade-7.2.0
+# Sostituire la posizione della variabile per include e librerie di
+# OpenCascade
+CASROOT = /usr/local
     
 win32 {
     DEFINES +=  \
@@ -74,12 +76,12 @@ win32 {
     }
 }
 
-linux-g++ {
-    INCLUDEPATH +=  \
-        $$(CASROOT)/include/opencascade
-
-    LIBS +=         \
-        -L$$(CASROOT)/lib
+unix {
+    message(Building in UNIX)
+    INCLUDEPATH += $$CASROOT/include/opencascade
+    message(Path INCLUDE per OPENCASCADE: $$CASROOT/include/opencascade)
+    LIBS += -L$$CASROOT/lib
+    message(Path LIB per OPENCASCADE: $$CASROOT/lib)
 }
 
 LIBS +=         \

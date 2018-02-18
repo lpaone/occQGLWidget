@@ -9,14 +9,14 @@
 *    Description : Qt widget for OpenCASCADE viewer.
 */
 
-#include <OpenGl_GraphicDriver.hxx>
-
-#include "occView.h"
-
 #include <QMenu>
 #include <QMouseEvent>
 #include <QRubberBand>
 #include <QStyleFactory>
+
+// Only after Qt include why dont'compile
+#include <OpenGl_GraphicDriver.hxx>
+#include "occView.h"
 
 // occ header files.
 #include <V3d_View.hxx>
